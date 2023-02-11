@@ -11,9 +11,9 @@
   padding: 0;
 }
 
-html {
+/* html {
   font-size: 16px;
-}
+} */
 
 body {
   font-family: Verdana, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
@@ -22,13 +22,7 @@ body {
 header,
 footer,
 nav,
-menu,
-article,
-aside,
-section,
-details,
-figcaption,
-figure {
+section {
   display: block;
 }
 
@@ -44,6 +38,8 @@ a {
 
 /* 変数 */
 :root {
+  --shadow-main-nav : rgb(98, 92, 92);
+  --shadow-nav-width: 3px;
   --shadow-color: #a4652e;
   --shadow-width: 5px;
   /* --main-shadow-color: #110F0E; */
@@ -56,6 +52,23 @@ a {
 ************************ */
 header img {
   object-fit: cover;
+  width: 100%;
+  min-height: 100%;
+}
+
+.parallax-bg-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.img-bg-00 {
+  background-image: url("img/main.jpg");
 }
 
 .header-container {
@@ -76,6 +89,16 @@ header li {
   margin-left: 30px;
   color: white;
   font-size: .9em;
+
+  text-shadow: 
+  3px 3px var(--shadow-nav-width) var(--shadow-main-nav), 
+  -3px -3px var(--shadow-nav-width)var(--shadow-main-nav),
+  -3px 3px var(--shadow-nav-width)var(--shadow-main-nav), 
+  3px -3px var(--shadow-nav-width) var(--shadow-main-nav),
+  3px 0px var(--shadow-nav-width) var(--shadow-main-nav), 
+  -3px -0px var(--shadow-nav-width) var(--shadow-main-nav),
+  0px 3px var(--shadow-nav-width) var(--shadow-main-nav), 
+  0px -3px var(--shadow-nav-width) var(--shadow-main-nav);
 }
 
 header h1 {
@@ -102,24 +125,24 @@ header h1 {
 /* ************************
 // ----main----
 ************************ */
-.section-img-wrapper img {
+/* .section-img-wrapper img {
   object-fit: cover;
-}
+} */
 
-.section-img-wrapper {
+/* .section-img-wrapper {
   position: relative;
   margin-top: 16px;
   margin-bottom: 80px;
-}
+} */
 
-.section-img-wrapper h2 {
+/* .section-img-wrapper h2 {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
   font-size: 4.5em;
-  letter-spacing: 2px;
+  letter-spacing: 2px; */
 
   /* 
     text-shadow：要素 {text-shadow: 水平方向 垂直方向 ぼかす半径 色};
@@ -128,6 +151,40 @@ header h1 {
     black 0px 1px 0, black  0-1px 0,         右、左
     black -1px 0 0, black 1px 0 0;           上、下 
   */
+
+  /* text-shadow:
+    3px 3px var(--shadow-width)  var(--shadow-color), 
+    -3px -3px var(--shadow-width) var(--shadow-color),
+    -3px 3px var(--shadow-width)  var(--shadow-color), 
+    3px -3px var(--shadow-width)  var(--shadow-color),
+    3px 0px var(--shadow-width)  var(--shadow-color), 
+    -3px -0px var(--shadow-width)  var(--shadow-color),
+    0px 3px var(--shadow-width)  var(--shadow-color), 
+    0px -3px var(--shadow-width)  var(--shadow-color);
+} */
+
+.parallax-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* min-height: 50vh; */
+  height: 300px;
+  margin-bottom: 80px;
+}
+
+.img-bg-01 {
+  background-image: url("img/cafe.jpg");
+}
+
+.parallax-bg h2 {
+  color: white;
+  font-size: 4.5em;
+  letter-spacing: 2px;
 
   text-shadow:
     3px 3px var(--shadow-width)  var(--shadow-color), 
@@ -139,6 +196,7 @@ header h1 {
     0px 3px var(--shadow-width)  var(--shadow-color), 
     0px -3px var(--shadow-width)  var(--shadow-color);
 }
+
 
 h3 {
   font-size: 40px;
